@@ -21,9 +21,9 @@ btn.addEventListener("click", () => {
     let total_days = Math.floor((now - dob) / (1000 * 60 * 60 * 24));
 
 
-    let years = date3.getFullYear() - date2.getFullYear();
-    let months = date3.getMonth() - date2.getMonth();
-    let days = date3.getDate() - date2.getDate();
+    let years = now.getFullYear() - dob.getFullYear();
+    let months = now.getMonth() - dob.getMonth();
+    let days = now.getDate() - dob.getDate();
 
 
     if (months < 0) {
