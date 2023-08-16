@@ -7,8 +7,6 @@ let output_Day = document.querySelector("#age_Days")
 
 btn.addEventListener("click", () => {
     let date = new Date;
-    console.log(date.getMonth());
-
     let input_year = document.querySelector("#year").value;
     let input_month = document.querySelector("#month").value;
     let input_day = document.querySelector("#day").value;
@@ -20,17 +18,18 @@ btn.addEventListener("click", () => {
 
     let total_days = Math.floor((now - dob) / (1000 * 60 * 60 * 24));
 
-
     let years = now.getFullYear() - dob.getFullYear();
     let months = now.getMonth() - dob.getMonth();
     let days = now.getDate() - dob.getDate();
 
-
+    let x = months;
     if (months < 0) {
-        output_year.innerText = Math.abs(years);
-    }else{   
-        output_Month.innerText = months;
+        years--;
+        console.log(months)
+        x = 12 + months
     }
+
+    output_Month.innerText = x;
     output_year.innerText = years;
     output_Day.innerText = days;
 })
